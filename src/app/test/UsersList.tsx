@@ -7,10 +7,10 @@ type User = {
 const getUsers = async() => {
   await new Promise((resolve) => setTimeout(resolve, 5000));
   const response = await
-  fetch('https://jsonplaceholder.typicode.com/user');
+  fetch('https://jsonplaceholder.typicode.com/users');
   if(!response.ok) throw new Error('Something went wrong');
   const users: User[] = await response.json();
-  console.log(users) //サーバ側で処理が行われてるかチェック
+  // console.log(users) //サーバ側で処理が行われてるかチェック
   return users;
 }
 
