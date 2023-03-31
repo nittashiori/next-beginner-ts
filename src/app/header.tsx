@@ -8,6 +8,7 @@ const header = () => {
           <li><img src="/vercel.svg" /></li>
           <li><Link href="/">Home</Link></li>
           <li><Link href="/about">About</Link></li>
+          <li><Link href="/test">Test</Link></li>
         </ul>
       </nav>
     </header>
