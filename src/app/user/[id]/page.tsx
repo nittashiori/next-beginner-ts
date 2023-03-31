@@ -19,6 +19,17 @@ const getUser = async(id: string) => {
   return user;
 }
 
+export async function generateStaticParams() {
+  const response = await fetch(
+    `https://jsonplaceholder.typicode.com/users/`
+  );
+  const users: User[] = await response.json();
+
+  return users.map((user) => ({
+    id: user.id.toString(),
+  }))
+}
+
 const User = async({ params: { id } }: Props) => {
   const user = await getUser(id);
   if(!user.id) {
