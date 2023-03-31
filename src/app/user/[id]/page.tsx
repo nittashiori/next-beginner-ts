@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation'
+
 type Props = {
   params: { id: string }
 }
@@ -18,6 +20,9 @@ const getUser = async(id: string) => {
 
 const User = async({ params: { id } }: Props) => {
   const user = await getUser(id);
+  if(!user.id) {
+    notFound();
+  }
   return (
     <div>
       <h1>User詳細ページ { id }</h1>
