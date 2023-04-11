@@ -1,4 +1,4 @@
-import 'src/styles/globals.css'
+import 'src/styles/destyle.css'
 import Header from './header'
 
 export const metadata = {
