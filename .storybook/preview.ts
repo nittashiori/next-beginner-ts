@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/react";
+import 'src/styles/destyle.css'
 import 'src/styles/globals.css'
 import { Noto_Sans_JP, Roboto } from '@next/font/google'
 
