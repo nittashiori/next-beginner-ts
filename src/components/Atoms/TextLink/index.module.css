@@ -1,0 +1,15 @@
+.link {
+  font-size: 1.5rem;
+  line-height: 2.7rem;
+  color: var(--color-link);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .link {
+    font-size: 1.2rem;
+  }
+}
