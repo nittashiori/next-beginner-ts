@@ -1,4 +1,5 @@
 import { Logo } from "src/components/Atoms/Logo"
+import { SectionTitle } from "src/components/Atoms/SectionTitle"
 
 export default function Page() {
   return (
@@ -8,6 +9,7 @@ export default function Page() {
         href="/"
         link
        />
+       <SectionTitle>タイトルが入ります</SectionTitle>
     </>
   );
 }

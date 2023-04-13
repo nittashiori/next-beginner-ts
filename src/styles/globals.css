@@ -107,6 +107,14 @@ a {
   }
 } */
 
+:root {
+  --color-primary: #DD1B57;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: var(--font-roboto), var(--font-notojp), sans-serif;
 }
