@@ -12,6 +12,13 @@ type Story = StoryObj<typeof Logo>;
 
 export const Default: Story = {
   args: {
-    label: 'Logo',
+    link: false,
+  },
+};
+
+export const Link: Story = {
+  args: {
+    link: true,
+    href: "/",
   },
 };

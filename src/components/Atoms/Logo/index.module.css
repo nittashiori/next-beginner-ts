@@ -1,4 +1,4 @@
-.logo {
-  font-weight: bold;
-  color: var(--test);
+.logo svg {
+  width: 100%;
+  height: auto;
 }
