@@ -1,5 +1,21 @@
 import 'src/styles/destyle.css'
+import 'src/styles/globals.css'
+import { Noto_Sans_JP, Roboto } from '@next/font/google'
 import Header from './header'
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  display: "swap",
+  variable: "--font-roboto",
+})
+
+const notojp = Noto_Sans_JP({
+  weight: ["500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-notojp",
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,7 +29,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`
+        ${roboto.variable}
+        ${notojp.variable}
+      `}>
         <Header />
         {children}
         <footer>フッター</footer>
