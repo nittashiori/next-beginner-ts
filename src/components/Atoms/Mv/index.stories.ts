@@ -10,9 +10,4 @@ const meta: Meta<typeof Mv> = {
 export default meta;
 type Story = StoryObj<typeof Mv>;
 
-export const Default: Story = {
-  // args: {
-  //   level: 1,
-  //   children: "Mv"
-  // }
-};
+export const Default: Story = {};

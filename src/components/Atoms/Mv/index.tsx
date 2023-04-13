@@ -1,10 +1,5 @@
 import styles from './index.module.css';
 
-// type Props = {
-//   level?: 1 | 2 | 3 | 4 | 5 | 6;
-//   children: React.ReactNode;
-// }
-
 export const Mv = () => {
   return (
     <div className={styles.mv}>
