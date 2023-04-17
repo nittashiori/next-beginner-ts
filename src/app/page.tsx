@@ -6,6 +6,7 @@ import { Mv } from "src/components/Atoms/Mv"
 import { PageTitle } from "src/components/Atoms/PageTitle"
 import { IntroTitle } from "src/components/Atoms/IntroTitle"
 import { Avator } from "src/components/Atoms/Avator"
+import { MessageImage } from "src/components/Atoms/MessageImage"
 
 export default function Page() {
   return (
@@ -22,6 +23,7 @@ export default function Page() {
        <PageTitle>ページタイトル</PageTitle>
        <IntroTitle>{`IntroTitleが\n入ります`}</IntroTitle>
        <Avator src="avator.png" alt="ceo" />
+       <MessageImage src="office.png" alt="officeイメージ" />
     </>
   );
 }
