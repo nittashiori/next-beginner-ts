@@ -7,6 +7,7 @@ import { PageTitle } from "src/components/Atoms/PageTitle"
 import { IntroTitle } from "src/components/Atoms/IntroTitle"
 import { Avator } from "src/components/Atoms/Avator"
 import { MessageImage } from "src/components/Atoms/MessageImage"
+import { NewsItem } from "src/components/Atoms/NewsItem"
 
 export default function Page() {
   return (
@@ -24,6 +25,11 @@ export default function Page() {
        <IntroTitle>{`IntroTitleが\n入ります`}</IntroTitle>
        <Avator src="avator.png" alt="ceo" />
        <MessageImage src="office.png" alt="officeイメージ" />
+       <NewsItem
+         href="/"
+         date="2022.04.01"
+         text="ニュース1"
+       />
     </>
   );
 }
