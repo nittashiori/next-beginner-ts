@@ -5,6 +5,7 @@ import { TextLink } from "src/components/Atoms/TextLink"
 import { Mv } from "src/components/Atoms/Mv"
 import { PageTitle } from "src/components/Atoms/PageTitle"
 import { IntroTitle } from "src/components/Atoms/IntroTitle"
+import { Avator } from "src/components/Atoms/Avator"
 
 export default function Page() {
   return (
@@ -20,6 +21,7 @@ export default function Page() {
        <Mv />
        <PageTitle>ページタイトル</PageTitle>
        <IntroTitle>{`IntroTitleが\n入ります`}</IntroTitle>
+       <Avator src="avator.png" alt="ceo" />
     </>
   );
 }
