@@ -1,0 +1,15 @@
+.messageImage {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.messageImage img {
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .messageImage {
+    height: 260px;
+  }
+}
