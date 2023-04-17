@@ -4,6 +4,7 @@ import { MaterialIcon } from "src/components/Atoms/MaterialIcon"
 import { TextLink } from "src/components/Atoms/TextLink"
 import { Mv } from "src/components/Atoms/Mv"
 import { PageTitle } from "src/components/Atoms/PageTitle"
+import { IntroTitle } from "src/components/Atoms/IntroTitle"
 
 export default function Page() {
   return (
@@ -18,6 +19,7 @@ export default function Page() {
        <TextLink href="https://google.com">リンクが入ります</TextLink>
        <Mv />
        <PageTitle>ページタイトル</PageTitle>
+       <IntroTitle>{`IntroTitleが\n入ります`}</IntroTitle>
     </>
   );
 }
