@@ -1,0 +1,31 @@
+.listItem {
+  display: flex;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  padding: 0 32px 32px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.listItem:not(:first-child) {
+  padding: 32px;
+}
+
+.title {
+  width: 20%;
+  max-width: 320px;
+}
+
+.detail {
+  margin-left: 20px;
+  flex: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .listItem {
+    padding: 0 0 22px;
+  }
+
+  .listItem:not(:first-child) {
+    padding: 0 22px;
+  }
+}

@@ -8,6 +8,7 @@ import { IntroTitle } from "src/components/Atoms/IntroTitle"
 import { Avator } from "src/components/Atoms/Avator"
 import { MessageImage } from "src/components/Atoms/MessageImage"
 import { NewsItem } from "src/components/Atoms/NewsItem"
+import { ListItem } from "src/components/Atoms/ListItem"
 
 export default function Page() {
   return (
@@ -29,6 +30,10 @@ export default function Page() {
          href="/"
          date="2022.04.01"
          text="ニュース1"
+       />
+       <ListItem
+         title="社名"
+         detail="株式会社START"
        />
     </>
   );
