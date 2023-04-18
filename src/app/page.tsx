@@ -10,8 +10,9 @@ import { MessageImage } from "src/components/Atoms/MessageImage"
 import { NewsItem } from "src/components/Atoms/NewsItem"
 import { ListItem } from "src/components/Atoms/ListItem"
 import { List } from "src/components/Molecules/List"
+import { NewsList } from "src/components/Molecules/NewsList"
 
-import { officeDate } from "src/datas/outline"
+import { officeDate, newsData } from "@/datas/data"
 
 export default function Page() {
   return (
@@ -40,6 +41,9 @@ export default function Page() {
        />
        <List
         data={officeDate}
+       />
+       <NewsList
+        data={newsData}
        />
     </>
   );
