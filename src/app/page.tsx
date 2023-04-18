@@ -1,17 +1,18 @@
-import { Logo } from "src/components/Atoms/Logo"
-import { SectionTitle } from "src/components/Atoms/SectionTitle"
-import { MaterialIcon } from "src/components/Atoms/MaterialIcon"
-import { TextLink } from "src/components/Atoms/TextLink"
-import { Mv } from "src/components/Atoms/Mv"
-import { PageTitle } from "src/components/Atoms/PageTitle"
-import { IntroTitle } from "src/components/Atoms/IntroTitle"
-import { Avator } from "src/components/Atoms/Avator"
-import { MessageImage } from "src/components/Atoms/MessageImage"
-import { NewsItem } from "src/components/Atoms/NewsItem"
-import { ListItem } from "src/components/Atoms/ListItem"
-import { List } from "src/components/Molecules/List"
+import { Logo } from "@/components/Atoms/Logo"
+import { SectionTitle } from "@/components/Atoms/SectionTitle"
+import { MaterialIcon } from "@/components/Atoms/MaterialIcon"
+import { TextLink } from "@/components/Atoms/TextLink"
+import { Mv } from "@/components/Atoms/Mv"
+import { PageTitle } from "@/components/Atoms/PageTitle"
+import { IntroTitle } from "@/components/Atoms/IntroTitle"
+import { Avator } from "@/components/Atoms/Avator"
+import { MessageImage } from "@/components/Atoms/MessageImage"
+import { NewsItem } from "@/components/Atoms/NewsItem"
+import { ListItem } from "@/components/Atoms/ListItem"
+import { List } from "@/components/Molecules/List"
+import { NewsList } from "@/components/Molecules/NewsList"
 
-import { officeDate } from "src/datas/outline"
+import { officeDate, newsData } from "@/datas/data"
 
 export default function Page() {
   return (
@@ -40,6 +41,9 @@ export default function Page() {
        />
        <List
         data={officeDate}
+       />
+       <NewsList
+        data={newsData}
        />
     </>
   );

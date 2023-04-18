@@ -12,7 +12,7 @@ type Props = {
 
 export const List = ({ data }:Props) => {
   return  (
-    <div className={styles.lists}>
+    <div className={styles.list}>
       {data.map((item, index) => (
         <ListItem key={index} title={item.title} detail={item.detail} />
       ))}
