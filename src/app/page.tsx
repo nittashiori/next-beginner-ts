@@ -9,6 +9,9 @@ import { Avator } from "src/components/Atoms/Avator"
 import { MessageImage } from "src/components/Atoms/MessageImage"
 import { NewsItem } from "src/components/Atoms/NewsItem"
 import { ListItem } from "src/components/Atoms/ListItem"
+import { List } from "src/components/Molecules/List"
+
+import { officeDate } from "src/datas/outline"
 
 export default function Page() {
   return (
@@ -34,6 +37,9 @@ export default function Page() {
        <ListItem
          title="社名"
          detail="株式会社START"
+       />
+       <List
+        data={officeDate}
        />
     </>
   );

@@ -26,6 +26,6 @@
   }
 
   .listItem:not(:first-child) {
-    padding: 0 22px;
+    padding: 22px 0 22px;
   }
 }

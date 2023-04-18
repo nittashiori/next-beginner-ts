@@ -1,5 +1,4 @@
 import styles from './index.module.css';
-// import Link from 'next/link';
 
 type Props = {
   title: string;
