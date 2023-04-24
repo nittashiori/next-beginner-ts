@@ -1,0 +1,49 @@
+.serviceItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 50px 56px;
+  background: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 3px 21px rgba(0, 0, 0, 0.16);
+  color: var(--color-text);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  line-height: 1;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 1.4rem;
+  line-height: 1.7;
+}
+
+@media screen and (max-width: 768px) {
+  .serviceItem {
+    padding: 40px 30px 46px;
+  }
+
+  .header i {
+    font-size: 6rem !important;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+    margin-top: 10px;
+  }
+  
+  .description {
+    margin-top: 13px;
+  }
+}

@@ -12,6 +12,7 @@ import { ListItem } from "@/components/Atoms/ListItem"
 import { List } from "@/components/Molecules/List"
 import { NewsList } from "@/components/Molecules/NewsList"
 import { Map } from "@/components/Atoms/Map"
+import { ServiceItem } from "@/components/Molecules/ServiceItem"
 
 import { officeDate, newsData } from "@/datas/data"
 
@@ -47,6 +48,12 @@ export default function Page() {
         data={newsData}
        />
        <Map />
+       <ServiceItem
+        href="/"
+        icon="work"
+        title="人材紹介業"
+        description="新規サイトの制作はもちろんサイトリニューアルやランディングページの制作も可能です。"
+       />
     </>
   );
 }
