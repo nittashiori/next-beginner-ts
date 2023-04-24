@@ -11,6 +11,7 @@ import { NewsItem } from "@/components/Atoms/NewsItem"
 import { ListItem } from "@/components/Atoms/ListItem"
 import { List } from "@/components/Molecules/List"
 import { NewsList } from "@/components/Molecules/NewsList"
+import { Map } from "@/components/Atoms/Map"
 
 import { officeDate, newsData } from "@/datas/data"
 
@@ -45,6 +46,7 @@ export default function Page() {
        <NewsList
         data={newsData}
        />
+       <Map />
     </>
   );
 }
