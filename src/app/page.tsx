@@ -13,14 +13,12 @@ import { List } from "@/components/Molecules/List"
 import { NewsList } from "@/components/Molecules/NewsList"
 import { Map } from "@/components/Atoms/Map"
 import { ServiceItem } from "@/components/Molecules/ServiceItem"
-import { Header } from "@/components/Organisms/Header"
 
 import { officeDate, newsData } from "@/datas/data"
 
 export default function Page() {
   return (
     <>
-     <Header />
       <h1>Hello, Next.js!</h1>
       <Logo
         href="/"

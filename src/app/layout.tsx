@@ -1,7 +1,8 @@
 import 'src/styles/destyle.css'
 import 'src/styles/globals.css'
 import { Noto_Sans_JP, Roboto } from '@next/font/google'
-import Header from './header'
+import { Header } from "@/components/Organisms/Header"
+import { Footer } from "@/components/Organisms/Footer"
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -35,7 +36,7 @@ export default function RootLayout({
       `}>
         <Header />
         {children}
-        <footer>フッター</footer>
+        <Footer />
       </body>
     </html>
   )
