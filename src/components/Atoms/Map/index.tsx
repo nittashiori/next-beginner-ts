@@ -1,39 +1,39 @@
 "use client";
+import { FC } from 'react';
 import styles from './index.module.css';
-import Image from 'next/image';
-import { useState, useEffect } from 'react';
 
-export const Map = () => {
-  const [isMobile, setIsMobile] = useState(false);
+interface Props {
+  /**
+   * マップのURL
+   */
+  src: string;
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    }
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return() => {
-      window.removeEventListener('resize', handleResize);
-    }
-  }, []);
+  /**
+   * 幅
+   */
+  width?: string | number;
 
+  /**
+   * 高さ
+   */
+  height?: string | number;
+}
+
+export const Map:FC<Props> = ({
+  src,
+  width = "100%",
+  height = "450",
+}) => {
   return (
-    <div className={styles.map}>
-      { isMobile ? (
-        <Image
-          src="/map_sp.png"
-          alt="地図"
-          width={335}
-          height={300}
-        />
-      ) : (
-        <Image
-          src="/map_pc.png"
-          alt="地図"
-          width={1100}
-          height={400}
-        />
-      ) }
-    </div>
+    <iframe
+      src={src}
+      width={width}
+      height={height}
+      style={{ border: 0, maxWidth: `${width}px` }}
+      allowFullScreen={true}
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      className={styles.map}
+    ></iframe>
   );
 };
