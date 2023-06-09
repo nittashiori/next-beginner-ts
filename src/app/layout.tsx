@@ -1,8 +1,7 @@
 import 'src/styles/destyle.css'
 import 'src/styles/globals.css'
 import { Noto_Sans_JP, Roboto } from '@next/font/google'
-import { Header } from "@/components/Organisms/Header"
-import { Footer } from "@/components/Organisms/Footer"
+import { BaseTemplate } from '@/components/Templates/BaseTemplate'
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -29,14 +28,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="jp">
       <body className={`
         ${roboto.variable}
         ${notojp.variable}
       `}>
-        <Header />
-        {children}
-        <Footer />
+        <BaseTemplate>
+          {children}
+        </BaseTemplate>
       </body>
     </html>
   )
