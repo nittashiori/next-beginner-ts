@@ -12,7 +12,7 @@ type Story = StoryObj<typeof SectionTitle>;
 
 export const Default: Story = {
   args: {
-    level: 1,
+    as: "h1",
     children: "SectionTitle"
   }
 };

@@ -1,14 +1,35 @@
-import styles from './index.module.css';
+
+import { FC } from 'react';import styles from './index.module.css';
 import { MaterialIcon } from "@/components/Atoms/MaterialIcon"
 
-type Props = {
+interface Props {
+  /**
+   * リンク先
+   */
   href: string;
+
+  /**
+   * アイコン
+   */
   icon: string;
+
+  /**
+   * タイトル
+   */
   title: string;
+
+  /**
+   * 説明
+   */
   description: string;
 }
 
-export const ServiceItem = ({ href, icon, title, description }:Props) => {
+export const ServiceItem: FC<Props> = ({
+  href,
+  icon,
+  title,
+  description
+}) => {
   return  (
     <a href={href} className={styles.serviceItem}>
       <div className={styles.header}>

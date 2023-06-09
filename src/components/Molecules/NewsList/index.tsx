@@ -1,17 +1,34 @@
+import { FC } from 'react';
 import styles from './index.module.css';
 import { NewsItem } from '../../Atoms/NewsItem';
 
 type ListItem = {
+  /**
+   * リンク先
+   */
   href: string,
+
+  /**
+   * 日付
+   */
   date: string,
+
+  /**
+   * テキスト
+   */
   text: string,
 }
 
-type Props = {
+interface Props {
+  /**
+   * リストデータ
+   */
   data: ListItem[]
 }
 
-export const NewsList = ({ data }:Props) => {
+export const NewsList:FC<Props> = ({
+  data
+}) => {
   return  (
     <div className={styles.newsList}>
       {data.map((item, index) => (

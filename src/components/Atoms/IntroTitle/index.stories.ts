@@ -12,7 +12,7 @@ type Story = StoryObj<typeof IntroTitle>;
 
 export const Default: Story = {
   args: {
-    level: 1,
+    as: "h1",
     children: "IntroTitleが\n入ります"
   }
 };

@@ -1,12 +1,23 @@
+import { FC } from 'react';
 import styles from './index.module.css';
 import Image from "next/image";
 
-type Props = {
+interface Props {
+  /**
+   * 画像のパス
+   */
   src: string;
+
+  /**
+   * 画像のalt
+   */
   alt?: string;
 }
 
-export const Avator = ({ src, alt }:Props) => {
+export const Avator: FC<Props> = ({ 
+  src,
+  alt
+}) => {
   return (
     <Image
       src={`/${src}`}
