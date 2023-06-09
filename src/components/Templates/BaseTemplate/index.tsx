@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react';
+import styles from './index.module.css';
 import { Header } from "@/components/Organisms/Header"
 import { Footer } from "@/components/Organisms/Footer"
 
@@ -15,7 +16,7 @@ export const BaseTemplate: FC<Props> = ({
   return (
     <>
       <Header />
-      <main>
+      <main className={styles.content}>
         {children}
       </main>
       <Footer />
