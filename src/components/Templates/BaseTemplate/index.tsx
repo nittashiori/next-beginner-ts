@@ -16,7 +16,7 @@ export const BaseTemplate: FC<Props> = ({
   return (
     <>
       <Header />
-      <main className={styles.content}>
+      <main>
         {children}
       </main>
       <Footer />

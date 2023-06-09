@@ -17,7 +17,7 @@ interface Props {
   /**
    * タグの指定
    */
-  as: keyof JSX.IntrinsicElements;
+  as?: keyof JSX.IntrinsicElements;
 
   /**
    * クラス名
