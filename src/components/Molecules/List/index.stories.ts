@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { List } from './index';
-import { data } from './data'
+import { officeDate } from '@/datas/data';
 
 const meta: Meta<typeof List> = {
   title: 'Molecules/List',
@@ -13,6 +13,6 @@ type Story = StoryObj<typeof List>;
 
 export const Default: Story = {
   args: {
-    data: data,
+    data: officeDate,
   },
 };

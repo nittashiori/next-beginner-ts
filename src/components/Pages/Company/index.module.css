@@ -1,0 +1,15 @@
+.container {
+  display: grid;
+  gap: 80px;
+}
+
+.info {
+  display: grid;
+  gap: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    gap: 50px;
+  }
+}
