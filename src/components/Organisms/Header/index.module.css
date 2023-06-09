@@ -96,7 +96,7 @@
     height: 100vh;
     padding: 90px 20px 20px 20px;
     background: var(--color-primary);
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: 10;
