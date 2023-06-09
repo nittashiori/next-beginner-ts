@@ -1,0 +1,26 @@
+.footer {
+  width: 100%;
+  padding: 60px 20px 50px;
+  background: var(--color-primary);
+  box-sizing: border-box;
+  color: var(--color-white);
+}
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav ul {
+  display: flex;
+  gap: 30px;
+  font-size: 1.4rem;
+}
+
+.copyright {
+  font-size: 1.2rem;
+}
