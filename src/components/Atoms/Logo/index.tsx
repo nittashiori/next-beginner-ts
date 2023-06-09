@@ -1,12 +1,23 @@
+import { FC } from 'react';
 import styles from './index.module.css';
 import Link from 'next/link';
 
-type LinkProps = {
+interface Props {
+  /**
+   * リンクを有効にするかどうか
+   */
   link?: boolean;
+
+  /**
+   * リンク先
+   */
   href?: string;
 }
 
-export const Logo = ({ link, href="/" }: LinkProps) => {
+export const Logo: FC<Props> = ({
+  link,
+  href="/"
+}) => {
   return link ? (
     <Link href={href} className={styles.logo}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167 33">

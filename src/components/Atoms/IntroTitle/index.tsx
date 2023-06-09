@@ -1,11 +1,22 @@
+import { FC, ReactNode } from 'react';
 import styles from './index.module.css';
 
-type Props = {
+interface Props {
+  /**
+   * 見出しのレベル
+   */
   level?: 1 | 2 | 3 | 4 | 5 | 6;
-  children: React.ReactNode;
+
+  /**
+   * 見出しの中身
+   */
+  children: ReactNode;
 }
 
-export const IntroTitle = ({ level = 1, children }: Props) => {
+export const IntroTitle: FC<Props> = ({
+  level = 1,
+  children
+}) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
   return (
     <Tag className={styles.title}>{children}</Tag>

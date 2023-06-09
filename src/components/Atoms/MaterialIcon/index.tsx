@@ -1,16 +1,28 @@
+import { FC, ReactNode } from 'react';
 import styles from './index.module.css';
 
-type Props = {
+interface Props {
+  /**
+   * マテリアルアイコンのサイズ
+   */
   fontSize?: number;
+
+  /**
+   * マテリアルアイコンの色
+   */
   color?: string;
-  children: React.ReactNode;
+
+  /**
+   * マテリアルアイコンの中身
+   */
+  children: ReactNode;
 }
 
-export const MaterialIcon = ({ 
+export const MaterialIcon: FC<Props> = ({ 
   fontSize = 1.8,
   color = "var(--color-primary)",
   children
-}:Props) => {
+}) => {
   return (
     <i
       className={`${styles.icon} material-icons`}

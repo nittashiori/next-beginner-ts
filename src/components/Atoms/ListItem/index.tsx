@@ -1,11 +1,22 @@
+import { FC } from 'react';
 import styles from './index.module.css';
 
-type Props = {
+interface Props {
+  /**
+   * タイトル
+   */
   title: string;
+
+  /**
+   * 詳細
+   */
   detail: string;
 }
 
-export const ListItem = ({ title, detail }:Props) => {
+export const ListItem: FC<Props> = ({
+  title,
+  detail
+}) => {
   return  (
     <div className={styles.listItem}>
       <div className={styles.title}>{title}</div>

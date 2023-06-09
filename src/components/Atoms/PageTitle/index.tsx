@@ -1,10 +1,16 @@
+import { FC, ReactNode } from 'react';
 import styles from './index.module.css';
 
-type Props = {
-  children: React.ReactNode;
+interface Props {
+  /**
+   * タイトル
+   */
+  children: ReactNode;
 }
 
-export const PageTitle = ({ children }: Props) => {
+export const PageTitle: FC<Props> = ({
+  children
+}) => {
   return (
     <div className={styles.pageTitle}>
       <div className={styles.inner}>
