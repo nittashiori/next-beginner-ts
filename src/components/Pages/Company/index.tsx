@@ -13,7 +13,7 @@ export const Company = () => {
       <PageTitle>会社概要</PageTitle>
       <Container
         maxWidth={1200}
-        padding={{top: "40px", bottom: "60px", left: 0, right: 0}}
+        padding={{top: 40, right: 20, bottom: 60, left: 20}}
         className={styles.container}
       >
         <div className={styles.info}>
