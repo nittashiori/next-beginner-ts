@@ -8,6 +8,15 @@
   border-radius: 8px;
   box-shadow: 0 3px 21px rgba(0, 0, 0, 0.16);
   color: var(--color-text);
+  transition: var(--transition-base);
+}
+
+.serviceItem:hover {
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.16);
+}
+
+.serviceItem:focus {
+  box-shadow: var(--shadow-focus);
 }
 
 .header {
