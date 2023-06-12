@@ -37,16 +37,46 @@ export const Header = () => {
       />
       <nav className={`${styles.nav} ${styles.pc}`}>
         <ul>
-          <li><Link href="/" className={pathname === '/' ? styles.current : ''}>ホーム</Link></li>
-          <li><Link href="/message" className={pathname === '/message' ? styles.current : ''}>メッセージ</Link></li>
-          <li><Link href="/company" className={pathname === '/company' ? styles.current : ''}>会社概要</Link></li>
+          <li>
+            <Link href="/" className={pathname === '/' ? styles.current : ''}>ホーム</Link>
+          </li>
+          <li>
+            <Link href="/message" className={pathname === '/message' ? styles.current : ''}>メッセージ</Link>
+          </li>
+          <li>
+            <Link href="/company" className={pathname === '/company' ? styles.current : ''}>会社概要</Link>
+          </li>
         </ul>
       </nav>
       <nav className={navSpClass}>
-      <ul>
-          <li><Link href="/" className={pathname === '/' ? styles.current : ''}>ホーム</Link></li>
-          <li><Link href="/message" className={pathname === '/message' ? styles.current : ''}>メッセージ</Link></li>
-          <li><Link href="/company" className={pathname === '/company' ? styles.current : ''}>会社概要</Link></li>
+        <ul>
+          <li>
+            <Link
+              href="/"
+              className={pathname === '/' ? styles.current : ''}
+              onClick={handleClick}
+            >
+              ホーム
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/message"
+              className={pathname === '/message' ? styles.current : ''}
+              onClick={handleClick}
+            >
+              メッセージ
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/company"
+              className={pathname === '/company' ? styles.current : ''}
+              onClick={handleClick}
+            >
+              会社概要
+            </Link>
+          </li>
         </ul>
       </nav>
       <button
