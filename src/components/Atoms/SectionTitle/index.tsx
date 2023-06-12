@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react';
 import styles from './index.module.css';
+import clsx from 'clsx';
 
 interface Props {
   /**
@@ -11,13 +12,23 @@ interface Props {
    * 見出しの中身
    */
   children: ReactNode;
+
+  /**
+   * クラス名
+   */
+  className?: string;
 }
 
 export const SectionTitle: FC<Props> = ({
   as: Tag = "h1",
-  children
+  children,
+  className,
 }) => {
+  const containerClass = clsx(
+    styles.title,
+    className
+  );
   return (
-    <Tag className={styles.title}>{children}</Tag>
+    <Tag className={containerClass}>{children}</Tag>
   );
 };
