@@ -1,0 +1,51 @@
+import styles from './index.module.css';
+import { Mv } from '@/components/Atoms/Mv';
+import { Container } from '@/components/Atoms/Container';
+import { SectionTitle } from '@/components/Atoms/SectionTitle';
+import { NewsList } from '@/components/Molecules/NewsList';
+import { ServiceItem } from '@/components/Molecules/ServiceItem';
+
+import { newsData } from '@/datas/data';
+
+export const Top = () => {
+  return (
+    <>
+      <Mv />
+      <Container
+        maxWidth={1200}
+        padding={{top: 60, right: 20, bottom: 100, left: 20}}
+        className={styles.container}
+      >
+        <section className={styles.section}>
+          <div className={styles.newsInner}>
+            <SectionTitle className={styles.newsTitle}>ニュース</SectionTitle>
+            <NewsList data={newsData} className={styles.newsBody} />
+          </div>
+        </section>
+        <section className={styles.section} data-title="service">
+          <SectionTitle className={styles.serviceTitle}>サービス</SectionTitle>
+          <div className={styles.serviceBody}>
+            <ServiceItem
+              title="人材紹介業"
+              description="新規サイトの制作はもちろんサイトリニューアルやランディングページの制作も可能です。"
+              href="/"
+              icon="work"
+            />
+            <ServiceItem
+              title="スクール事業"
+              description="オンラインでWeb制作を学べるスクールを運営しています。"
+              href="/"
+              icon="location_city"
+            />
+            <ServiceItem
+              title="Webメディア運営"
+              description="人事系メディアやWebデザイン関連のメディアなどを複数運営しています。"
+              href="/"
+              icon="desktop_windows"
+            />
+          </div>
+        </section>
+      </Container>
+    </>
+  )
+}
