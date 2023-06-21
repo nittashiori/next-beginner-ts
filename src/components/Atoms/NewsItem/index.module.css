@@ -31,7 +31,7 @@
   box-shadow: var(--shadow-focus);
 }
 
-.text {
+.title {
   margin-left: 40px;
 }
 
@@ -40,7 +40,7 @@
     display: block;
   }
 
-  .text {
+  .title {
     margin: 7px 0 0;
   }
 }

@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import styles from './index.module.css';
 import { Mv } from '@/components/Atoms/Mv';
 import { Container } from '@/components/Atoms/Container';
@@ -5,9 +6,74 @@ import { SectionTitle } from '@/components/Atoms/SectionTitle';
 import { NewsList } from '@/components/Molecules/NewsList';
 import { ServiceItem } from '@/components/Molecules/ServiceItem';
 
-import { newsData } from '@/datas/data';
+type Post = {
+  /**
+   * 記事のID
+   * */
+  id: string;
 
-export const Top = () => {
+  /**
+   * 記事の作成日時
+   */
+  createdAt?: string;
+
+  /**
+   * 記事の更新日時
+   */
+  updatedAt?: string;
+
+  /**
+   * 記事の公開日時
+   */
+  publishedAt?: string;
+
+  /**
+   * 改定日時
+   */
+  revisedAt?: string;
+
+  /**
+   * 記事のタイトル
+   */
+  title: string;
+
+  /**
+   * 記事のスラッグ
+   */
+  slug?: string;
+
+  /**
+   * 投稿日時
+   */
+  publishDate: string;
+
+  /**
+   * 記事の本文
+   */
+  content?: string;
+  
+  /**
+   * アイキャッチ画像
+   */
+  eyecatch?: {
+    url?: string;
+    height?: number;
+    width?: number;
+  };
+
+  /**
+   * カテゴリー
+   */
+  categories?: { name: string }[];
+}
+
+interface Props {
+  posts: Post[];
+}
+
+export const Top: FC<Props> = ({
+  posts,
+}) => {
   return (
     <>
       <Mv />
@@ -19,7 +85,7 @@ export const Top = () => {
         <section className={styles.section}>
           <div className={styles.newsInner}>
             <SectionTitle className={styles.newsTitle}>ニュース</SectionTitle>
-            <NewsList data={newsData} className={styles.newsBody} />
+            <NewsList data={posts} className={styles.newsBody} />
           </div>
         </section>
         <section className={styles.section} data-title="service">
