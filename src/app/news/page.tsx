@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { News } from "@/components/Pages/News";
 import { getList } from "@/libs/microcms";
 

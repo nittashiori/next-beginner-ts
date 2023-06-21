@@ -85,7 +85,11 @@ export const Top: FC<Props> = ({
         <section className={styles.section}>
           <div className={styles.newsInner}>
             <SectionTitle className={styles.newsTitle}>ニュース</SectionTitle>
-            <NewsList data={posts} className={styles.newsBody} />
+            {posts.length > 0 ? (
+              <NewsList data={posts} className={styles.newsBody} />
+            ) : (
+              <p>記事がありません。</p>
+            )}
           </div>
         </section>
         <section className={styles.section} data-title="service">

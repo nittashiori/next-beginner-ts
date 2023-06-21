@@ -1,8 +1,10 @@
 import { Top } from '@/components/Pages/Top';
-import { microData } from '@/datas/microcms';
+import { getList } from "@/libs/microcms";
 
-export default function Page() {
+export default async function Page() {
+  const { contents } = await getList();
+ 
   return (
-    <Top posts={microData} />
+   <Top posts={contents}/>
   );
-}
+ }
