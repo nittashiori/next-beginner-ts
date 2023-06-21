@@ -2,35 +2,41 @@ import { NewsDetail } from "@/components/Pages/NewsDetail";
 import { notFound } from "next/navigation";
 import parse from "html-react-parser";
 import { getDetail, getList } from "@/libs/microcms";
+import { formatDate } from '@/libs/dateUtils';
 
 export async function generateStaticParams() {
- const { contents } = await getList();
+  const { contents } = await getList();
 
- const paths = contents.map((post:any) => {
-  return {
-   postId: post.id,
-  };
- });
+  const paths = contents.map((post:any) => {
+    return {
+      postId: post.id,
+    };
+  });
 
- return [...paths];
+  return [...paths];
 }
 
 export default async function StaticDetailPage({
- params: { postId },
-}: {
- params: { postId: string };
-}) {
- const post = await getDetail(postId);
+    params: { postId },
+  } : {
+    params: { postId: string };
+  }) {
+  const post = await getDetail(postId);
 
- if (!post) {
-  notFound();
- }
+  if(!post) {
+    notFound();
+  }
 
- return (
-  <div>
-    <NewsDetail title={post.title} data={post.publishDate} eyecatch={post.eyecatch}>
-      {parse(post.content)}
-    </NewsDetail>
-  </div>
- );
+  const formattedPost = {
+    ...post,
+    publishDate: formatDate(post.publishDate),
+  };
+
+  return (
+    <div>
+      <NewsDetail title={formattedPost.title} data={formattedPost.publishDate} eyecatch={formattedPost.eyecatch}>
+        {parse(formattedPost.content)}
+      </NewsDetail>
+    </div>
+  );
 }
