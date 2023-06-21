@@ -88,7 +88,7 @@ export const NewsList:FC<Props> = ({
   return  (
     <div className={containerClass}>
       {data.map((item, index) => (
-        <NewsItem key={index} href={item.id} date={item.publishDate} title={item.title} />
+        <NewsItem key={index} href={`news/${item.id}`} date={item.publishDate} title={item.title} />
       ))}
     </div>
   );

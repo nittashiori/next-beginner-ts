@@ -44,7 +44,7 @@ type Post = {
   /**
    * 投稿日時
    */
-  publishDate?: string;
+  publishDate: string;
 
   /**
    * 記事の本文
