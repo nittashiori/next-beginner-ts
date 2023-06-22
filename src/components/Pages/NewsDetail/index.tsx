@@ -18,7 +18,7 @@ interface Props {
    * アイキャッチ
    */
   eyecatch: {
-    url?: string;
+    url?: string | undefined;
     height?: number;
     width?: number;
   };
@@ -32,22 +32,30 @@ interface Props {
 export const NewsDetail: FC<Props> = ({
   title,
   data,
-  eyecatch,
+  eyecatch = {},
   children
 }) => {
   return (
     <Container
-      maxWidth={1200}
+      maxWidth={800}
       padding={{top: 40, right: 20, bottom: 60, left: 20}}
       className={styles.container}
     >
-      <section>
-        <h1>{title}</h1>
-        <p>{data}</p>
+      <section className={styles.section}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>{title}</h1>
+          <p className={styles.data}>{data}</p>
+        </div>
         {eyecatch.url && (
-          <Image src={eyecatch.url} width={eyecatch.width} height={eyecatch.height} alt={`${title}のキャッチ画像`} />
+          <Image
+            src={eyecatch.url}
+            width={eyecatch.width}
+            height={eyecatch.height}
+            alt={`${title}のキャッチ画像`}
+            className={styles.eyecatch}
+          />
         )}
-        <div>{children}</div>
+        <div className={styles.body}>{children}</div>
       </section>
     </Container>
   )
