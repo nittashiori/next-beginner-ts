@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { NewsList } from './index';
-import { data } from './data'
+import { microData } from '@/datas/microcms'
 
 const meta: Meta<typeof NewsList> = {
   title: 'Molecules/NewsList',
@@ -13,6 +13,6 @@ type Story = StoryObj<typeof NewsList>;
 
 export const Default: Story = {
   args: {
-    data: data,
+    data: microData,
   },
 };

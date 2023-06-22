@@ -15,18 +15,18 @@ interface Props {
   /**
    * テキスト
    */
-  text: string;
+  title: string;
 }
 
 export const NewsItem: FC<Props> = ({
   href,
   date,
-  text
+  title
 }) => {
   return  (
     <a href={href} className={styles.newsItem}>
       <div className={styles.date}>{date}</div>
-      <div className={styles.text}>{text}</div>
+      <div className={styles.title}>{title}</div>
     </a>
   );
 };

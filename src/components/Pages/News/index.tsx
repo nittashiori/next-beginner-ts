@@ -1,9 +1,11 @@
 import { FC } from 'react';
 import styles from './index.module.css';
-import { NewsItem } from '../../Atoms/NewsItem';
-import clsx from 'clsx';
+import { Container } from "@/components/Atoms/Container";
+import { NewsList } from '@/components/Molecules/NewsList';
 
-type ListItem = {
+import { microData } from '@/datas/microcms';
+
+type Post = {
   /**
    * 記事のID
    * */
@@ -65,31 +67,19 @@ type ListItem = {
 }
 
 interface Props {
-  /**
-   * リストデータ
-   */
-  data: ListItem[]
-
-  /**
-   * クラス名
-   */
-  className?: string;
+  posts: Post[];
 }
 
-export const NewsList:FC<Props> = ({
-  data,
-  className,
+export const News: FC<Props> = ({
+  posts
 }) => {
-  const containerClass = clsx(
-    styles.newsList,
-    className
+  return (
+    <Container
+      maxWidth={1200}
+      padding={{top: 40, right: 20, bottom: 60, left: 20}}
+      className={styles.container}
+    >
+      <NewsList data={posts} />
+    </Container>
   )
-
-  return  (
-    <div className={containerClass}>
-      {data.map((item, index) => (
-        <NewsItem key={index} href={`news/${item.id}`} date={item.publishDate} title={item.title} />
-      ))}
-    </div>
-  );
-};
+}

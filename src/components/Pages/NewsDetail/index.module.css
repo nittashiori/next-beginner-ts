@@ -1,0 +1,59 @@
+.container {
+  display: grid;
+  gap: 80px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font-size: 4rem;
+}
+
+.data {
+  font-weight: bold;
+}
+
+.eyecatch {
+  width: 100%;
+  height: auto;
+}
+
+.body h2 {
+  margin: 60px 0 40px;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.body h3 {
+  margin: 60px 0 40px;
+  font-size: 2rem;
+}
+
+.body p {
+  line-height: 1.8;
+}
+
+.body img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    gap: 50px;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+}

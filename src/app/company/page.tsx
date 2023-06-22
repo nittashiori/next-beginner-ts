@@ -1,5 +1,16 @@
 import { Company } from "@/components/Pages/Company"
+import { getList } from "@/libs/microcms";
+import { formatDate } from '@/libs/dateUtils';
 
-export default function Page() {
-  return <Company />;
-}
+export default async function Page() {
+  const { contents } = await getList({ limit: 3 });
+
+  const formattedPosts = contents.map(post => ({
+    ...post,
+    publishDate: formatDate(post.publishDate)
+  }));
+ 
+  return (
+   <Company posts={formattedPosts}/>
+  );
+ }
