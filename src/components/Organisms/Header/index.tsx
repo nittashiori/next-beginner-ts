@@ -41,6 +41,9 @@ export const Header = () => {
             <Link href="/" className={pathname === '/' ? styles.current : ''}>ホーム</Link>
           </li>
           <li>
+            <Link href="/news" className={pathname.includes('/news') ? styles.current : ''}>ニュース</Link>
+          </li>
+          <li>
             <Link href="/message" className={pathname === '/message' ? styles.current : ''}>メッセージ</Link>
           </li>
           <li>
