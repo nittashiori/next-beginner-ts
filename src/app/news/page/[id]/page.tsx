@@ -7,8 +7,8 @@ export default async function StaticPage({
 } : {
   params: { id: number };
 }) {
-  const START_PAGE = (params.id - 1) * 5;
   const PER_PAGE = 5; // 取得する記事の件数を指定
+  const START_PAGE = (params.id - 1) * PER_PAGE;
 
   const { contents, totalCount } = await getList({ offset: START_PAGE, limit: PER_PAGE });
 
