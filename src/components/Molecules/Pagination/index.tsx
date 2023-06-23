@@ -36,21 +36,21 @@ export const Pagination: FC<Props> = ({
     <ul className={styles.pagination}>
       {pageNumber === '1' || (
         <li className={styles.list}>
-          <Link href={`/news/page/${prevNumber}`}>
+          <Link href={`/news/${prevNumber}`}>
             <span className="material-icons">chevron_left</span>
           </Link>
         </li>
       )}
       {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => (
         <li key={index} className={styles.list}>
-          <Link href={`/news/page/${number}`} className={pageNumber === String(number) ? styles.current : ''}>
+          <Link href={`/news/${number}`} className={pageNumber === String(number) ? styles.current : ''}>
             {number}
           </Link>
         </li>
       ))}
       {pageNumber === String(totalCount / PER_PAGE) || (
         <li className={styles.list}>
-          <Link href={`/news/page/${nextNumber}`}>
+          <Link href={`/news/${nextNumber}`}>
             <span className="material-icons">chevron_right</span>  
           </Link>
         </li>
