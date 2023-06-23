@@ -1,7 +1,9 @@
+"use client";
 import { FC } from 'react';
 import styles from './index.module.css';
 import { Container } from "@/components/Atoms/Container";
 import { NewsList } from '@/components/Molecules/NewsList';
+import { Pagination } from '@/components/Molecules/Pagination';
 
 import { microData } from '@/datas/microcms';
 
@@ -67,11 +69,20 @@ type Post = {
 }
 
 interface Props {
+  /**
+   * 記事のデータ
+   */
   posts: Post[];
+
+  /**
+   * 記事の総数
+   */
+  totalCount: number;
 }
 
 export const News: FC<Props> = ({
-  posts
+  posts = microData,
+  totalCount = 20,
 }) => {
   return (
     <Container
@@ -80,6 +91,7 @@ export const News: FC<Props> = ({
       className={styles.container}
     >
       <NewsList data={posts} />
+      <Pagination totalCount={totalCount}/>
     </Container>
   )
 }
