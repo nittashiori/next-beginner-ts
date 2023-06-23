@@ -4,7 +4,6 @@ import styles from './index.module.css';
 import { Container } from "@/components/Atoms/Container";
 import { NewsList } from '@/components/Molecules/NewsList';
 import { Pagination } from '@/components/Molecules/Pagination';
-// import { usePathname } from 'next/navigation'
 
 import { microData } from '@/datas/microcms';
 
