@@ -1,0 +1,26 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.list a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-border);
+  text-align: center;
+  border-radius: 4px;
+  transition: var(--transition-base);
+}
+
+.list a:hover {
+  background: var(--color-border);
+}
+
+.list a.current {
+  background: var(--color-border);
+}

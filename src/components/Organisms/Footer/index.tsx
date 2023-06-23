@@ -11,7 +11,7 @@ export const Footer = () => {
               <Link href="/">ホーム</Link>
             </li>
             <li>
-              <Link href="/news">ニュース</Link>
+              <Link href="/news/page/1">ニュース</Link>
             </li>
             <li>
               <Link href="/message">メッセージ</Link>
