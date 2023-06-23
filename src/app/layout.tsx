@@ -1,6 +1,7 @@
 import 'src/styles/destyle.css'
 import 'src/styles/globals.css'
 import { Noto_Sans_JP, Roboto } from '@next/font/google'
+import 'material-icons/iconfont/material-icons.css';
 import { BaseTemplate } from '@/components/Templates/BaseTemplate'
 
 const roboto = Roboto({

@@ -37,7 +37,7 @@ export const Pagination: FC<Props> = ({
       {pageNumber === '1' || (
         <li className={styles.list}>
           <Link href={`/news/page/${prevNumber}`}>
-            前
+            <span className="material-icons">chevron_left</span>
           </Link>
         </li>
       )}
@@ -51,7 +51,7 @@ export const Pagination: FC<Props> = ({
       {pageNumber === String(totalCount / PER_PAGE) || (
         <li className={styles.list}>
           <Link href={`/news/page/${nextNumber}`}>
-            次
+            <span className="material-icons">chevron_right</span>  
           </Link>
         </li>
       )}
