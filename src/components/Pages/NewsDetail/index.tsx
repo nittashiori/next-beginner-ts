@@ -2,6 +2,7 @@ import { FC, ReactNode } from 'react';
 import Image from 'next/image';
 import styles from './index.module.css';
 import { Container } from "@/components/Atoms/Container";
+import { CustomButton } from "@/components/Atoms/CustomButton";
 
 interface Props {
   /**
@@ -57,6 +58,19 @@ export const NewsDetail: FC<Props> = ({
         )}
         <div className={styles.body}>{children}</div>
       </section>
+      <div className={styles.control}>
+        <div className={styles.controlInner}>
+          <CustomButton href="/news/1" variant="ghost" width="full">
+            <span className="material-icons">chevron_left</span>
+            前の記事
+          </CustomButton>
+          <CustomButton href="/news/1" variant="ghost" width="full">
+            次の記事
+            <span className="material-icons">chevron_right</span>
+          </CustomButton>
+        </div>
+        <CustomButton href="/news/1" variant="outline" width={240}>ニュース一覧に戻る</CustomButton>
+      </div>
     </Container>
   )
 }
