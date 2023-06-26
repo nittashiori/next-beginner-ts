@@ -79,6 +79,14 @@
   transform: translate(-50%, -50%);
 }
 
+.prevButton {
+  margin-right: auto;
+}
+
+.nextButton {
+  margin-left: auto;
+}
+
 @media screen and (max-width: 768px) {
   .container {
     gap: 50px;

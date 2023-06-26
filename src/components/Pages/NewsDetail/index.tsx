@@ -73,13 +73,13 @@ export const NewsDetail: FC<Props> = ({
       <div className={styles.control}>
         <div className={styles.controlInner}>
           { prevId && (
-            <CustomButton href={`/news/details/${prevId}`} variant="ghost" width="50%">
+            <CustomButton href={`/news/details/${prevId}`} variant="ghost" width="50%" className={styles.prevButton}>
               <span className="material-icons">chevron_left</span>
               前の記事
             </CustomButton>
           ) }
           { nextId && (
-            <CustomButton href={`/news/details/${nextId}`} variant="ghost" width="50%">
+            <CustomButton href={`/news/details/${nextId}`} variant="ghost" width="50%" className={styles.nextButton}>
               次の記事
               <span className="material-icons">chevron_right</span>
             </CustomButton>
