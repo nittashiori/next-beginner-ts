@@ -9,7 +9,9 @@ export async function generateStaticParams() {
 
   const paths = contents.map((post:any) => {
     return {
-      postId: post.id,
+      params: {
+        postId: post.id.toString(),
+      },
     };
   });
 
@@ -21,6 +23,12 @@ export default async function StaticDetailPage({
   } : {
     params: { postId: string };
   }) {
+  // 前・次の記事のIDを取得
+  const { contents } = await getList();
+  const index = contents.findIndex((content) => content.id === postId);
+  const prevId = contents[index - 1] ? contents[index - 1].id : null;
+  const nextId = contents[index + 1] ? contents[index + 1].id : null;
+
   const post = await getDetail(postId);
 
   if(!post) {
@@ -34,7 +42,13 @@ export default async function StaticDetailPage({
 
   return (
     <div>
-      <NewsDetail title={formattedPost.title} data={formattedPost.publishDate} eyecatch={formattedPost.eyecatch}>
+      <NewsDetail
+        title={formattedPost.title}
+        data={formattedPost.publishDate}
+        eyecatch={formattedPost.eyecatch}
+        prevId={prevId}
+        nextId={nextId}
+      >
         {parse(formattedPost.content)}
       </NewsDetail>
     </div>
