@@ -28,13 +28,25 @@ interface Props {
    * 本文
    */
   children: ReactNode;
+
+  /**
+   * 前の記事のID
+   */
+  prevId?: string | null;
+
+  /**
+   * 次の記事のID
+   */
+  nextId?: string | null;
 }
 
 export const NewsDetail: FC<Props> = ({
   title,
   data,
   eyecatch = {},
-  children
+  children,
+  prevId,
+  nextId
 }) => {
   return (
     <Container
@@ -60,14 +72,18 @@ export const NewsDetail: FC<Props> = ({
       </section>
       <div className={styles.control}>
         <div className={styles.controlInner}>
-          <CustomButton href="/news/1" variant="ghost" width="full">
-            <span className="material-icons">chevron_left</span>
-            前の記事
-          </CustomButton>
-          <CustomButton href="/news/1" variant="ghost" width="full">
-            次の記事
-            <span className="material-icons">chevron_right</span>
-          </CustomButton>
+          { prevId && (
+            <CustomButton href={`/news/details/${prevId}`} variant="ghost" width="50%">
+              <span className="material-icons">chevron_left</span>
+              前の記事
+            </CustomButton>
+          ) }
+          { nextId && (
+            <CustomButton href={`/news/details/${nextId}`} variant="ghost" width="50%">
+              次の記事
+              <span className="material-icons">chevron_right</span>
+            </CustomButton>
+          ) }
         </div>
         <CustomButton href="/news/1" variant="outline" width={240}>ニュース一覧に戻る</CustomButton>
       </div>
