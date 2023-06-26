@@ -87,25 +87,32 @@ interface Props {
     id: string;
     name: string;
   }[];
+
+  /**
+   * カテゴリー名
+   */
+  categoryName: string;
 }
 
-export const News: FC<Props> = ({
+export const NewsCategory: FC<Props> = ({
   posts = microData,
   totalCount = 20,
-  categoryLists
+  categoryLists,
+  categoryName,
 }) => {
   return (
     <Container
       maxWidth={1200}
       padding={{top: 40, right: 20, bottom: 60, left: 20}}
     >
-      <div className={styles.main}>
+      <section className={styles.main}>
+        <h1>Category: {categoryName}</h1>
         <NewsList data={posts} />
         <Pagination
           totalCount={totalCount}
-          params="/news"
+          params={`/news/category/${categoryName}`}
         />
-      </div>
+      </section>
       <ul>
         {categoryLists.map((list, index) => (
           <li key={index}>

@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { News } from "@/components/Pages/News";
-import { getList } from "@/libs/microcms";
+import { getCategoryList, getList } from "@/libs/microcms";
 import { formatDate } from '@/libs/dateUtils';
 
 export default async function StaticPage({
@@ -21,7 +22,22 @@ export default async function StaticPage({
     publishDate: formatDate(post.publishDate)
   }));
 
+  const { contents: categoryLists } = await getCategoryList();
+
   return (
-    <News posts={formattedPosts} totalCount={totalCount} />
+    <>
+      {/* <ul>
+        {categoryLists.map((list, index) => (
+          <li key={index}>
+            <Link href={`/news/category/${list.id}/1`}>{list.id}</Link>
+          </li>
+        ))}
+      </ul> */}
+      <News
+        posts={formattedPosts}
+        totalCount={totalCount}
+        categoryLists={categoryLists}
+      />
+    </>
   );
 }

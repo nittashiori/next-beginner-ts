@@ -13,6 +13,14 @@ export type Blog = {
  slug: string;
  publishDate: string;
  eyecatch: MicroCMSImage;
+ categories: Category[];
+} & MicroCMSDate;
+
+// カテゴリーの型定義
+export type Category = {
+  id: string;
+  name: string;
+  slug: string;
 } & MicroCMSDate;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
@@ -37,6 +45,15 @@ export const getList = async (queries?: MicroCMSQueries) => {
  });
  return listData;
 };
+
+// カテゴリー一覧を取得
+export const getCategoryList = async (queries?: MicroCMSQueries) => {
+  const listData = await client.getList<Category>({
+   endpoint: "categories",
+   queries,
+  });
+  return listData;
+ };
 
 // ブログの詳細を取得
 export const getDetail = async (
