@@ -54,7 +54,7 @@ export const Pagination: FC<Props> = ({
           </Link>
         </li>
       ))}
-      {pageNumber === String(totalCount / PER_PAGE) || (
+      {pageNumber === String(Math.ceil(totalCount / PER_PAGE)) || (
         <li className={styles.list}>
           <Link href={`${params}/${nextNumber}`}>
             <span className="material-icons">chevron_right</span>  
