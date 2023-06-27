@@ -69,18 +69,6 @@ type Post = {
   categories?: { name: string }[];
 }
 
-type Category = {
-  /**
-   * カテゴリーID
-   */
-  id: string;
-
-  /**
-   * カテゴリー名
-   */
-  name: string;
-}
-
 interface Props {
   /**
    * 記事のデータ
@@ -95,13 +83,22 @@ interface Props {
   /**
    * カテゴリー一覧
    */
-  categoryLists: Category[];
+  categoryLists: {
+    id: string;
+    name: string;
+  }[];
+
+  /**
+   * カテゴリー名
+   */
+  categoryName: string;
 }
 
-export const News: FC<Props> = ({
+export const NewsCategory: FC<Props> = ({
   posts = microData,
   totalCount = 20,
-  categoryLists
+  categoryLists,
+  categoryName,
 }) => {
   return (
     <Container
@@ -113,7 +110,7 @@ export const News: FC<Props> = ({
       <NewsList data={posts} />
       <Pagination
         totalCount={totalCount}
-        params="/news"
+        params={`/news/category/${categoryName}`}
       />
     </Container>
   )
