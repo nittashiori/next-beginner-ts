@@ -31,3 +31,40 @@
 .lists li a:focus {
   box-shadow: var(--shadow-focus);
 }
+
+.label {
+  margin-bottom: 8px;
+}
+
+.selectWrap {
+  width: 100%;
+  position: relative;
+}
+
+.selectWrap span {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+}
+
+.select {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--color-text);
+  border-radius: 4px;
+}
+
+.sp {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .pc {
+    display: none;
+  }
+
+  .sp {
+    display: block;
+  }
+}
