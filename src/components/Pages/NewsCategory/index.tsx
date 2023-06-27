@@ -1,10 +1,10 @@
 "use client";
 import { FC } from 'react';
-import Link from 'next/link';
 import styles from './index.module.css';
 import { Container } from "@/components/Atoms/Container";
 import { NewsList } from '@/components/Molecules/NewsList';
 import { Pagination } from '@/components/Molecules/Pagination';
+import { Category } from '@/components/Organisms/Category';
 
 import { microData } from '@/datas/microcms';
 
@@ -104,22 +104,14 @@ export const NewsCategory: FC<Props> = ({
     <Container
       maxWidth={1200}
       padding={{top: 40, right: 20, bottom: 60, left: 20}}
+      className={styles.container}
     >
-      <section className={styles.main}>
-        <h1>Category: {categoryName}</h1>
-        <NewsList data={posts} />
-        <Pagination
-          totalCount={totalCount}
-          params={`/news/category/${categoryName}`}
-        />
-      </section>
-      <ul>
-        {categoryLists.map((list, index) => (
-          <li key={index}>
-            <Link href={`/news/category/${list.id}/1`}>{list.id}</Link>
-          </li>
-        ))}
-      </ul>
+      <Category categoryLists={categoryLists} />
+      <NewsList data={posts} />
+      <Pagination
+        totalCount={totalCount}
+        params={`/news/category/${categoryName}`}
+      />
     </Container>
   )
 }

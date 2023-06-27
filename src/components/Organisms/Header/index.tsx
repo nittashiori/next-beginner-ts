@@ -64,6 +64,15 @@ export const Header = () => {
           </li>
           <li>
             <Link
+              href="/news/1"
+              className={pathname.includes('/news') ? styles.current : ''}
+              onClick={handleClick}
+            >
+              ニュース
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/message"
               className={pathname === '/message' ? styles.current : ''}
               onClick={handleClick}
