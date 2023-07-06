@@ -38,13 +38,24 @@
 
 .button {
   height: 100%;
-  aspect-ratio: 1;
-  padding: 21px 16px;
   background: var(--color-primary);
   position: absolute;
   top: 0;
   right: 0;
   z-index: 10;
+}
+
+.buttonWrap {
+  display: flex;
+  width: auto;
+  height: 100%;
+  padding: 21px 16px;
+}
+
+.buttonWrap::before {
+  display: block;
+  content: "";
+  padding-top: 100%;
 }
 
 .buttonInner {
