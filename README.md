@@ -1,4 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Overview
+
+[コーディング練習](https://webdesigner-go.com/coding-practice/beginner/)のデザインを元に、Next.js(v13)とTypeScriptで実装した練習サイトです。
+
+## Preview
+
+https://next-beginner-ts-nittashiori.vercel.app/
 
 ## Getting Started
 
