@@ -3,53 +3,43 @@ import { notFound } from "next/navigation";
 import parse from "html-react-parser";
 import { getDetail, getList } from "@/libs/microcms";
 import { formatDate } from '@/libs/dateUtils';
-import { Metadata } from 'next'
+import { Metadata, ResolvingMetadata } from 'next'
 
-export async function generateMetadata({
-  params: { postId },
-} : {
-  params: { postId: string };
-}): Promise<Metadata> {
+export async function generateMetadata(
+  {
+    params: { postId },
+  } : {
+    params: { postId: string };
+  },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   const post = await getDetail(postId);
   const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "START"
   const PAGE_NAME = post.title;
   const TITLE = `${PAGE_NAME} | ${SITE_NAME}`;
   const DESCRIPTION = `${post.content.slice(0, 100).replace(/(<([^>]+)>)/gi, '')}...`;
+  const Query = post.id ? `/news/details/${post.id}` : "/news/details"
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://next-beginner-ts.vercel.app';
-  const IMAGE = post.eyecatch?.url || 'https://next-beginner-ts.vercel.app/ogp.png';
+  const USERNAME = process.env.NEXT_PUBLIC_USER_NAME || "@hogehoge"
+  const USERID = process.env.NEXT_PUBLIC_USER_ID || "123456789"
 
   const metadata: Metadata = {
     title: PAGE_NAME,
     description: DESCRIPTION,
     openGraph: {
-      type: "website",
-      locale: "ja_JP",
+      ...(await parent).openGraph,
       title: TITLE,
       description: DESCRIPTION,
-      url: BASE_URL,
-      siteName: SITE_NAME,
-      images: [
-        {
-          url: `${IMAGE}`,
-          width: 1600,
-          height: 900,
-          alt: PAGE_NAME,
-        },
-      ],
+      url: `${BASE_URL}${Query}`,
     },
     twitter: {
-      card: "summary_large_image",
-      site: SITE_NAME,
+      ...(await parent).twitter,
       title: TITLE,
       description: DESCRIPTION,
-      images: [
-        {
-          url: `${IMAGE}`,
-          width: 1600,
-          height: 900,
-          alt: PAGE_NAME,
-        },
-      ],
+      site: SITE_NAME,
+      siteId: USERNAME,
+      creator: USERNAME,
+      creatorId: USERID,
     }
   }
 

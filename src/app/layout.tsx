@@ -23,6 +23,8 @@ const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "START"
 const DESCRIPTION = "株式会社STARTは、幸せにつながるお仕事を紹介する人材紹介会社です。人材紹介サービス『スタート』や人材紹介SNS『ゴール』を運営し、またWebデザインを学べるスクール『Webの学校』を開講しています。"
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://next-beginner-ts.vercel.app';
 const IMAGE = process.env.NEXT_PUBLIC_IMG_URL || 'https://next-beginner-ts.vercel.app/ogp.png';
+const USERNAME = process.env.NEXT_PUBLIC_USER_NAME || "@hogehoge"
+const USERID = process.env.NEXT_PUBLIC_USER_ID || "123456789"
 
 export const metadata: Metadata = {
   title: {
@@ -48,9 +50,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site:  SITE_NAME,
     title: SITE_NAME,
     description: DESCRIPTION,
+    site: SITE_NAME,
+    siteId: USERNAME,
+    creator: USERNAME,
+    creatorId: USERID,
     images: [
       {
         url: `${IMAGE}`,
