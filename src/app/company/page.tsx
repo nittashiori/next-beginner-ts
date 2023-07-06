@@ -41,7 +41,6 @@ export async function generateMetadata(): Promise<Metadata> {
       siteId: USERNAME,
       creator: USERNAME,
       creatorId: USERID,
-
       images: [
         {
           url: `${BASE_URL}${IMAGE}`,
