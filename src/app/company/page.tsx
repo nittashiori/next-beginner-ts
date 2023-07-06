@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const PAGE_NAME = "会社概要"
   const TITLE = `${PAGE_NAME} | ${SITE_NAME}`;
   const DESCRIPTION = "会社概要の説明文が入ります"
-  const Query = "/company"
+  const QUERY = "/company"
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://next-beginner-ts.vercel.app';
   const USERNAME = process.env.NEXT_PUBLIC_USER_NAME || "@hogehoge"
   const USERID = process.env.NEXT_PUBLIC_USER_ID || "123456789"
@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: "ja_JP",
       title: TITLE,
       description: DESCRIPTION,
-      url: `${BASE_URL}${Query}`,
+      url: `${BASE_URL}${QUERY}`,
       siteName: SITE_NAME,
       images: [
         {

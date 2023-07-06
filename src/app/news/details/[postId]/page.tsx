@@ -18,7 +18,7 @@ export async function generateMetadata(
   const PAGE_NAME = post.title;
   const TITLE = `${PAGE_NAME} | ${SITE_NAME}`;
   const DESCRIPTION = `${post.content.slice(0, 100).replace(/(<([^>]+)>)/gi, '')}...`;
-  const Query = post.id ? `/news/details/${post.id}` : "/news/details"
+  const QUERY = post.id ? `/news/details/${post.id}` : "/news/details"
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://next-beginner-ts.vercel.app';
   const USERNAME = process.env.NEXT_PUBLIC_USER_NAME || "@hogehoge"
   const USERID = process.env.NEXT_PUBLIC_USER_ID || "123456789"
@@ -30,7 +30,7 @@ export async function generateMetadata(
       ...(await parent).openGraph,
       title: TITLE,
       description: DESCRIPTION,
-      url: `${BASE_URL}${Query}`,
+      url: `${BASE_URL}${QUERY}`,
     },
     twitter: {
       ...(await parent).twitter,
