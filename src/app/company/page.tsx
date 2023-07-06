@@ -1,11 +1,9 @@
 import { Company } from "@/components/Pages/Company"
 import { getList } from "@/libs/microcms";
 import { formatDate } from '@/libs/dateUtils';
-import { Metadata, ResolvingMetadata } from 'next'
+import { Metadata } from 'next'
 
-export async function generateMetadata(
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "START"
   const PAGE_NAME = "会社概要"
   const TITLE = `${PAGE_NAME} | ${SITE_NAME}`;
@@ -14,24 +12,44 @@ export async function generateMetadata(
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://next-beginner-ts.vercel.app';
   const USERNAME = process.env.NEXT_PUBLIC_USER_NAME || "@hogehoge"
   const USERID = process.env.NEXT_PUBLIC_USER_ID || "123456789"
+  const IMAGE = process.env.NEXT_PUBLIC_IMG_URL || 'https://next-beginner-ts.vercel.app/ogp.png';
 
   const metadata: Metadata = {
     title: PAGE_NAME,
     description: DESCRIPTION,
     openGraph: {
-      ...(await parent).openGraph,
+      type: "website",
+      locale: "ja_JP",
       title: TITLE,
       description: DESCRIPTION,
       url: `${BASE_URL}${Query}`,
+      siteName: SITE_NAME,
+      images: [
+        {
+          url: `${BASE_URL}${IMAGE}`,
+          width: 1600,
+          height: 900,
+          alt: PAGE_NAME,
+        },
+      ],
     },
     twitter: {
-      ...(await parent).twitter,
+      card: "summary_large_image",
       title: TITLE,
       description: DESCRIPTION,
       site: SITE_NAME,
       siteId: USERNAME,
       creator: USERNAME,
       creatorId: USERID,
+
+      images: [
+        {
+          url: `${BASE_URL}${IMAGE}`,
+          width: 1600,
+          height: 900,
+          alt: PAGE_NAME,
+        },
+      ],
     }
   }
 
