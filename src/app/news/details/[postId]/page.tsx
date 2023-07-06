@@ -31,6 +31,14 @@ export async function generateMetadata(
       title: TITLE,
       description: DESCRIPTION,
       url: `${BASE_URL}${QUERY}`,
+      images: [
+        {
+          url: `${post.eyecatch.url}`,
+          width: 1600,
+          height: 900,
+          alt: PAGE_NAME,
+        },
+      ],
     },
     twitter: {
       ...(await parent).twitter,
@@ -40,6 +48,14 @@ export async function generateMetadata(
       siteId: USERNAME,
       creator: USERNAME,
       creatorId: USERID,
+      images: [
+        {
+          url: `${post.eyecatch.url}`,
+          width: 1600,
+          height: 900,
+          alt: PAGE_NAME,
+        },
+      ],
     }
   }
 
