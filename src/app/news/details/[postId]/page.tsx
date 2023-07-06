@@ -14,7 +14,7 @@ export async function generateMetadata({
   const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "START"
   const PAGE_NAME = post.title;
   const TITLE = `${PAGE_NAME} | ${SITE_NAME}`;
-  const DESCRIPTION = `${post.content.slice(0, 100).replace(/<br><br>/g, '')}...`;
+  const DESCRIPTION = `${post.content.slice(0, 100).replace(/(<([^>]+)>)/gi, '')}...`;
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://next-beginner-ts.vercel.app';
   const IMAGE = post.eyecatch?.url || 'https://next-beginner-ts.vercel.app/ogp.png';
 
