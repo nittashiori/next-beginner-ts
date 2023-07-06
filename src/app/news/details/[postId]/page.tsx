@@ -3,6 +3,58 @@ import { notFound } from "next/navigation";
 import parse from "html-react-parser";
 import { getDetail, getList } from "@/libs/microcms";
 import { formatDate } from '@/libs/dateUtils';
+import { Metadata } from 'next'
+
+export async function generateMetadata({
+  params: { postId },
+} : {
+  params: { postId: string };
+}): Promise<Metadata> {
+  const post = await getDetail(postId);
+  const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "START"
+  const PAGE_NAME = post.title;
+  const TITLE = `${PAGE_NAME} | ${SITE_NAME}`;
+  const DESCRIPTION = `${post.content.slice(0, 100).replace(/<br><br>/g, '')}...`;
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://next-beginner-ts.vercel.app';
+  const IMAGE = post.eyecatch?.url || 'https://next-beginner-ts.vercel.app/ogp.png';
+
+  const metadata: Metadata = {
+    title: PAGE_NAME,
+    description: DESCRIPTION,
+    openGraph: {
+      type: "website",
+      locale: "ja_JP",
+      title: TITLE,
+      description: DESCRIPTION,
+      url: BASE_URL,
+      siteName: SITE_NAME,
+      images: [
+        {
+          url: `${IMAGE}`,
+          width: 1600,
+          height: 900,
+          alt: PAGE_NAME,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      site: SITE_NAME,
+      title: TITLE,
+      description: DESCRIPTION,
+      images: [
+        {
+          url: `${IMAGE}`,
+          width: 1600,
+          height: 900,
+          alt: PAGE_NAME,
+        },
+      ],
+    }
+  }
+
+  return metadata;
+}
 
 export async function generateStaticParams() {
   const { contents } = await getList();
