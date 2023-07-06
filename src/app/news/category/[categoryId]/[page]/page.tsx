@@ -105,13 +105,6 @@ export default async function Page({
   
   return (
     <div>
-      {/* <ul>
-        {categoryLists.map((list, index) => (
-          <li key={index}>
-            <Link href={`/news/category/${list.id}`}>{list.id}</Link>
-          </li>
-        ))}
-      </ul> */}
       <NewsCategory
         posts={formattedPosts}
         totalCount={totalCount}

@@ -76,13 +76,6 @@ export default async function StaticPage({
 
   return (
     <>
-      {/* <ul>
-        {categoryLists.map((list, index) => (
-          <li key={index}>
-            <Link href={`/news/category/${list.id}/1`}>{list.id}</Link>
-          </li>
-        ))}
-      </ul> */}
       <News
         posts={formattedPosts}
         totalCount={totalCount}
