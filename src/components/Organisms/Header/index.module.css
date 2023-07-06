@@ -14,12 +14,11 @@
 
 .nav ul {
   display: flex;
-  gap: 16px;
 }
 
 .nav a {
   display: block;
-  padding: 4px 8px;
+  padding: 12px 8px;
   border-radius: 4px;
   transition: var(--transition-base);
 }
@@ -38,24 +37,12 @@
 
 .button {
   height: 100%;
+  aspect-ratio: 1;
   background: var(--color-primary);
   position: absolute;
   top: 0;
   right: 0;
   z-index: 10;
-}
-
-.buttonWrap {
-  display: flex;
-  width: auto;
-  height: 100%;
-  padding: 21px 16px;
-}
-
-.buttonWrap::before {
-  display: block;
-  content: "";
-  padding-top: 100%;
 }
 
 .buttonInner {
@@ -64,6 +51,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: auto;
 }
 
 .buttonInner span {
