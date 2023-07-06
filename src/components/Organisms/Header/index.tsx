@@ -95,12 +95,10 @@ export const Header = () => {
         className={buttonClass}
         onClick={handleClick}
       >
-        <span className={styles.buttonWrap}>
-          <span className={styles.buttonInner}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
+        <span className={styles.buttonInner}>
+          <span></span>
+          <span></span>
+          <span></span>
         </span>
       </button>
     </header>
