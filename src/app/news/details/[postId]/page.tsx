@@ -3,6 +3,64 @@ import { notFound } from "next/navigation";
 import parse from "html-react-parser";
 import { getDetail, getList } from "@/libs/microcms";
 import { formatDate } from '@/libs/dateUtils';
+import { Metadata, ResolvingMetadata } from 'next'
+
+export async function generateMetadata(
+  {
+    params: { postId },
+  } : {
+    params: { postId: string };
+  },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const post = await getDetail(postId);
+  const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "START"
+  const PAGE_NAME = post.title;
+  const TITLE = `${PAGE_NAME} | ${SITE_NAME}`;
+  const DESCRIPTION = `${post.content.slice(0, 100).replace(/(<([^>]+)>)/gi, '')}...`;
+  const QUERY = post.id ? `/news/details/${post.id}` : "/news/details"
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://next-beginner-ts.vercel.app';
+  const USERNAME = process.env.NEXT_PUBLIC_USER_NAME || "@hogehoge"
+  const USERID = process.env.NEXT_PUBLIC_USER_ID || "123456789"
+
+  const metadata: Metadata = {
+    title: PAGE_NAME,
+    description: DESCRIPTION,
+    openGraph: {
+      ...(await parent).openGraph,
+      title: TITLE,
+      description: DESCRIPTION,
+      url: `${BASE_URL}${QUERY}`,
+      images: [
+        {
+          url: `${post.eyecatch.url}`,
+          width: 1600,
+          height: 900,
+          alt: PAGE_NAME,
+        },
+      ],
+    },
+    twitter: {
+      ...(await parent).twitter,
+      title: TITLE,
+      description: DESCRIPTION,
+      site: SITE_NAME,
+      siteId: USERNAME,
+      creator: USERNAME,
+      creatorId: USERID,
+      images: [
+        {
+          url: `${post.eyecatch.url}`,
+          width: 1600,
+          height: 900,
+          alt: PAGE_NAME,
+        },
+      ],
+    }
+  }
+
+  return metadata;
+}
 
 export async function generateStaticParams() {
   const { contents } = await getList();
