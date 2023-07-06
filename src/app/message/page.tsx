@@ -1,5 +1,5 @@
 import { Message } from "@/components/Pages/Message"
-import { Metadata } from 'next'
+import { Metadata, ResolvingMetadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {
   const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "START"
