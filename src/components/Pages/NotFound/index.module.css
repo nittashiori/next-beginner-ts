@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  gap: 80px;
+}
+
+.text {
+  line-height: 1.8;
+}
+
+.control {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    gap: 50px;
+  }
+}
