@@ -5,6 +5,7 @@ import { Container } from "@/components/Atoms/Container";
 import { NewsList } from '@/components/Molecules/NewsList';
 import { Pagination } from '@/components/Molecules/Pagination';
 import { Category } from '@/components/Organisms/Category';
+import { PageTitle } from "@/components/Atoms/PageTitle";
 
 import { microData } from '@/datas/microcms';
 
@@ -101,17 +102,22 @@ export const NewsCategory: FC<Props> = ({
   categoryName,
 }) => {
   return (
-    <Container
-      maxWidth={1200}
-      padding={{top: 40, right: 20, bottom: 60, left: 20}}
-      className={styles.container}
-    >
-      <Category categoryLists={categoryLists} />
-      <NewsList data={posts} />
-      <Pagination
-        totalCount={totalCount}
-        params={`/news/category/${categoryName}`}
-      />
-    </Container>
+    <>
+      <PageTitle>
+        {`${categoryName.charAt(0).toUpperCase()}${categoryName.slice(1)}のニュース`}
+      </PageTitle>
+      <Container
+        maxWidth={1200}
+        padding={{top: 40, right: 20, bottom: 60, left: 20}}
+        className={styles.container}
+      >
+        <Category categoryLists={categoryLists} />
+        <NewsList data={posts} />
+        <Pagination
+          totalCount={totalCount}
+          params={`/news/category/${categoryName}`}
+        />
+      </Container>
+    </>
   )
 }
