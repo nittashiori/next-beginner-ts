@@ -22,6 +22,7 @@ export async function generateMetadata(
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://next-beginner-ts.vercel.app';
   const USERNAME = process.env.NEXT_PUBLIC_USER_NAME || "@hogehoge"
   const USERID = process.env.NEXT_PUBLIC_USER_ID || "123456789"
+  const IMAGE = post.eyecatch ? post.eyecatch.url : `https://next-beginner-ts.vercel.app/ogp.png`
 
   const metadata: Metadata = {
     title: PAGE_NAME,
@@ -33,7 +34,7 @@ export async function generateMetadata(
       url: `${BASE_URL}${QUERY}`,
       images: [
         {
-          url: `${post.eyecatch.url}`,
+          url: IMAGE,
           width: 1600,
           height: 900,
           alt: PAGE_NAME,
@@ -50,7 +51,7 @@ export async function generateMetadata(
       creatorId: USERID,
       images: [
         {
-          url: `${post.eyecatch.url}`,
+          url: IMAGE,
           width: 1600,
           height: 900,
           alt: PAGE_NAME,
