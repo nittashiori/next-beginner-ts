@@ -3,6 +3,7 @@ import { FC } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './index.module.css';
+import { TransitionLink } from '@/components/Atoms/TransitionLink'
 
 interface Props {
   /**
@@ -42,23 +43,23 @@ export const Pagination: FC<Props> = ({
     <ul className={styles.pagination}>
       {pageNumber === '1' || (
         <li className={styles.list}>
-          <Link href={`${params}/${prevNumber}`}>
+          <TransitionLink href={`${params}/${prevNumber}`}>
             <span className="material-icons">chevron_left</span>
-          </Link>
+          </TransitionLink>
         </li>
       )}
       {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => (
         <li key={index} className={styles.list}>
-          <Link href={`${params}/${number}`} className={pageNumber === String(number) ? styles.current : ''}>
+          <TransitionLink href={`${params}/${number}`} className={pageNumber === String(number) ? styles.current : ''}>
             {number}
-          </Link>
+          </TransitionLink>
         </li>
       ))}
       {pageNumber === String(Math.ceil(totalCount / PER_PAGE)) || (
         <li className={styles.list}>
-          <Link href={`${params}/${nextNumber}`}>
+          <TransitionLink href={`${params}/${nextNumber}`}>
             <span className="material-icons">chevron_right</span>  
-          </Link>
+          </TransitionLink>
         </li>
       )}
     </ul>

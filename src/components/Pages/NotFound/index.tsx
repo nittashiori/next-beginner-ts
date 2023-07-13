@@ -1,9 +1,12 @@
+"use client";
 import styles from './index.module.css';
 import { PageTitle } from "@/components/Atoms/PageTitle";
 import { Container } from "@/components/Atoms/Container";
 import { CustomButton } from '@/components/Atoms/CustomButton';
+import { useReset } from '@/components/Atoms/TransitionLink';
 
 export const NotFound = () => {
+  useReset();
   return (
     <>
       <PageTitle>404 Not Found</PageTitle>

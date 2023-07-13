@@ -1,5 +1,6 @@
 import styles from './index.module.css';
 import Link from 'next/link';
+import { TransitionLink } from "@/components/Atoms/TransitionLink";
 
 export const Footer = () => {
   return (
@@ -8,16 +9,16 @@ export const Footer = () => {
         <nav className={styles.nav}>
           <ul>
             <li>
-              <Link href="/">ホーム</Link>
+              <TransitionLink href="/">ホーム</TransitionLink>
             </li>
             <li>
-              <Link href="/news/1">ニュース</Link>
+              <TransitionLink href="/news/1">ニュース</TransitionLink>
             </li>
             <li>
-              <Link href="/message">メッセージ</Link>
+              <TransitionLink href="/message">メッセージ</TransitionLink>
             </li>
             <li>
-              <Link href="/company">会社概要</Link>
+              <TransitionLink href="/company">会社概要</TransitionLink>
             </li>
           </ul>
         </nav>

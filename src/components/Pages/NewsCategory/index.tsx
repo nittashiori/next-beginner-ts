@@ -6,6 +6,7 @@ import { NewsList } from '@/components/Molecules/NewsList';
 import { Pagination } from '@/components/Molecules/Pagination';
 import { Category } from '@/components/Organisms/Category';
 import { PageTitle } from "@/components/Atoms/PageTitle";
+import { useReset } from '@/components/Atoms/TransitionLink';
 
 import { microData } from '@/datas/microcms';
 
@@ -101,6 +102,8 @@ export const NewsCategory: FC<Props> = ({
   categoryLists,
   categoryName,
 }) => {
+  useReset();
+  
   return (
     <>
       <PageTitle>

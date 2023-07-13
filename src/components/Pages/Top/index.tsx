@@ -1,3 +1,4 @@
+"use client";
 import { FC } from 'react';
 import styles from './index.module.css';
 import { Mv } from '@/components/Atoms/Mv';
@@ -5,6 +6,7 @@ import { Container } from '@/components/Atoms/Container';
 import { SectionTitle } from '@/components/Atoms/SectionTitle';
 import { NewsList } from '@/components/Molecules/NewsList';
 import { ServiceItem } from '@/components/Molecules/ServiceItem';
+import { useReset } from '@/components/Atoms/TransitionLink';
 
 type Post = {
   /**
@@ -74,6 +76,8 @@ interface Props {
 export const Top: FC<Props> = ({
   posts,
 }) => {
+  useReset();
+  
   return (
     <>
       <Mv />

@@ -1,8 +1,10 @@
+"use client";
 import { FC, ReactNode } from 'react';
 import Image from 'next/image';
 import styles from './index.module.css';
 import { Container } from "@/components/Atoms/Container";
 import { CustomButton } from "@/components/Atoms/CustomButton";
+import { useReset } from '@/components/Atoms/TransitionLink';
 
 interface Props {
   /**
@@ -48,6 +50,8 @@ export const NewsDetail: FC<Props> = ({
   prevId,
   nextId
 }) => {
+  useReset();
+  
   return (
     <Container
       maxWidth={800}

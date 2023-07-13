@@ -1,3 +1,4 @@
+"use client";
 import styles from './index.module.css';
 import Image from 'next/image';
 import { PageTitle } from "@/components/Atoms/PageTitle";
@@ -5,8 +6,11 @@ import { Container } from "@/components/Atoms/Container";
 import { IntroTitle } from "@/components/Atoms/IntroTitle";
 import { Avator } from '@/components/Atoms/Avator';
 import { CustomLink } from '@/components/Atoms/CustomLink';
+import { useReset } from '@/components/Atoms/TransitionLink';
 
 export const Message = () => {
+  useReset();
+  
   return (
     <>
       <PageTitle>メッセージ</PageTitle>
