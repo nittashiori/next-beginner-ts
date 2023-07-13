@@ -1,7 +1,10 @@
-import { FC, MouseEventHandler, ReactNode } from 'react';
+"use client";
+
+import { FC, MouseEventHandler, ReactNode, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './index.module.css'
 import clsx from 'clsx';
+import { useRouter } from 'next/navigation';
 
 interface Props {
   /**
@@ -30,6 +33,15 @@ interface Props {
   children: ReactNode;
 }
 
+export const useReset = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const body = document.querySelector('body')!
+    body.classList.remove('page-transition')
+  }, [router]);
+}
+
 export const CustomLink: FC<Props> = ({
   href="/",
   target="_self",
@@ -37,6 +49,16 @@ export const CustomLink: FC<Props> = ({
   onClick,
   children
 }) => {
+  const router = useRouter();
+  const clickEventHandler = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    event.preventDefault();
+    const body = document.querySelector('body');
+    body?.classList.add("page-transition");
+    setTimeout(() => {
+      router.push(href);
+    }, 1000)
+  }
+
   const containerClasses = clsx(
     styles.link,
     className
@@ -47,7 +69,7 @@ export const CustomLink: FC<Props> = ({
       href={href}
       target={target}
       className={containerClasses}
-      onClick={onClick}
+      onClick={onClick && clickEventHandler}
     >
       {children}
     </Link>

@@ -3,9 +3,9 @@
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import styles from './index.module.css';
-import Link from 'next/link';
 import clsx from 'clsx';
 import { Logo } from "@/components/Atoms/Logo"
+import { TransitionLink } from "@/components/Atoms/TransitionLink";
 
 export const Header = () => {
   const [isActive, setIsActive] = useState(false)
@@ -30,64 +30,62 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <Logo
-        href="/"
-        link
-        className={styles.logo}
-      />
+      <TransitionLink href="/" className={styles.logo}>
+        <Logo />
+      </TransitionLink>
       <nav className={`${styles.nav} ${styles.pc}`}>
         <ul>
           <li>
-            <Link href="/" className={pathname === '/' ? styles.current : ''}>ホーム</Link>
+            <TransitionLink href="/" className={pathname === '/' ? styles.current : ''}>ホーム</TransitionLink>
           </li>
           <li>
-            <Link href="/news/1" className={pathname.includes('/news') ? styles.current : ''}>ニュース</Link>
+            <TransitionLink href="/news/1" className={pathname.includes('/news') ? styles.current : ''}>ニュース</TransitionLink>
           </li>
           <li>
-            <Link href="/message" className={pathname === '/message' ? styles.current : ''}>メッセージ</Link>
+            <TransitionLink href="/message" className={pathname === '/message' ? styles.current : ''}>メッセージ</TransitionLink>
           </li>
           <li>
-            <Link href="/company" className={pathname === '/company' ? styles.current : ''}>会社概要</Link>
+            <TransitionLink href="/company" className={pathname === '/company' ? styles.current : ''}>会社概要</TransitionLink>
           </li>
         </ul>
       </nav>
       <nav className={navSpClass}>
         <ul>
           <li>
-            <Link
+            <TransitionLink
               href="/"
               className={pathname === '/' ? styles.current : ''}
               onClick={handleClick}
             >
               ホーム
-            </Link>
+            </TransitionLink>
           </li>
           <li>
-            <Link
+            <TransitionLink
               href="/news/1"
               className={pathname.includes('/news') ? styles.current : ''}
               onClick={handleClick}
             >
               ニュース
-            </Link>
+            </TransitionLink>
           </li>
           <li>
-            <Link
+            <TransitionLink
               href="/message"
               className={pathname === '/message' ? styles.current : ''}
               onClick={handleClick}
             >
               メッセージ
-            </Link>
+            </TransitionLink>
           </li>
           <li>
-            <Link
+            <TransitionLink
               href="/company"
               className={pathname === '/company' ? styles.current : ''}
               onClick={handleClick}
             >
               会社概要
-            </Link>
+            </TransitionLink>
           </li>
         </ul>
       </nav>

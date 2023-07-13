@@ -1,3 +1,4 @@
+"use client";
 import { FC } from 'react';
 import styles from './index.module.css';
 import { PageTitle } from "@/components/Atoms/PageTitle";
@@ -5,6 +6,7 @@ import { Container } from "@/components/Atoms/Container";
 import { List } from "@/components/Molecules/List";
 import { Map } from "@/components/Atoms/Map";
 import { NewsList } from '@/components/Molecules/NewsList';
+import { useReset } from '@/components/Atoms/TransitionLink';
 
 import { officeDate } from '@/datas/data';
 
@@ -76,6 +78,8 @@ interface Props {
 export const Company: FC<Props> = ({
   posts
 }) => {
+  useReset();
+
   return (
     <>
       <PageTitle>会社概要</PageTitle>

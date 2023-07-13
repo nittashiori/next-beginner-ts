@@ -3,6 +3,7 @@ import { FC, MouseEventHandler, ReactNode } from 'react';
 import Link from 'next/link';
 import styles from './index.module.css'
 import clsx from 'clsx';
+import { TransitionLink } from '../TransitionLink';
 
 interface Props {
   /**
@@ -72,7 +73,7 @@ export const CustomButton: FC<Props> = ({
   : {};
 
   return href ? (
-    <Link
+    <TransitionLink
       href={href}
       target={target}
       className={containerClasses}
@@ -80,7 +81,7 @@ export const CustomButton: FC<Props> = ({
       onClick={onClick}
     >
       {children}
-    </Link>
+    </TransitionLink>
   ) : (
     <button
       type="button"
