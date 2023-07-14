@@ -5,6 +5,8 @@ import 'material-icons/iconfont/material-icons.css';
 import { BaseTemplate } from '@/components/Templates/BaseTemplate'
 import { Metadata } from 'next'
 
+import { Providers } from "./providers";
+
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400', '700'],
@@ -79,7 +81,9 @@ export default function RootLayout({
         ${notojp.variable}
       `}>
         <BaseTemplate>
-          {children}
+          <Providers>
+            {children}
+          </Providers>
         </BaseTemplate>
       </body>
     </html>

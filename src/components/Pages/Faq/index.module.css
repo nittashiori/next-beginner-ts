@@ -1,0 +1,57 @@
+.container {
+  display: grid;
+  gap: 80px;
+}
+
+.accordionItem {
+  border-top: 1px solid var(--color-border);
+}
+
+.accordionItem:last-of-type {
+  border-bottom: 1px solid var(--color-border);
+}
+
+
+.accordionButton {
+  padding: 32px 16px;
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+.accordionButton::before {
+  display: block;
+  content: "Q.";
+  margin-right: 8px;
+}
+
+.accordionButton svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.accordionPanel {
+  display: flex;
+  padding: 32px 16px;
+  line-height: 1.8;
+}
+
+.accordionPanel::before {
+  display: block;
+  content: "A.";
+  margin-right: 8px;
+  color: var(--color-primary);
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    gap: 50px;
+  }
+
+  .accordionButton {
+    padding: 16px 8px;
+  }
+
+  .accordionPanel {
+    padding: 16px 8px;
+  }
+}
