@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  gap: 80px;
+}
+
+.accordion {
+  border: 1px solid #000 !important;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    gap: 50px;
+  }
+}
