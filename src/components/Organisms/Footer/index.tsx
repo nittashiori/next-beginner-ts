@@ -20,9 +20,6 @@ export const Footer = () => {
             <li>
               <TransitionLink href="/company">会社概要</TransitionLink>
             </li>
-            <li>
-              <TransitionLink href="/faq">よくある質問</TransitionLink>
-            </li>
           </ul>
         </nav>
         <small className={styles.copyright}>©START</small>
