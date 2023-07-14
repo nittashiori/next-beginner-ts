@@ -4,11 +4,12 @@
 }
 
 .accordionItem {
-  border-top: 1px solid var(--color-border);
+  border: none;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .accordionItem:last-of-type {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: none;
 }
 
 
@@ -40,6 +41,33 @@
   content: "A.";
   margin-right: 8px;
   color: var(--color-primary);
+}
+
+.tabList {
+  justify-content: center;
+  gap: 16px;
+  border: none;
+}
+
+.tab {
+  font-size: 1.6rem;
+  padding: 8px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.tab[aria-selected=true],
+.tab[data-selected] {
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.tabPanels {
+  margin-top: 32px;
+  padding: 32px;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
 }
 
 @media screen and (max-width: 768px) {
