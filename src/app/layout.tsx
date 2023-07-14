@@ -3,7 +3,6 @@ import 'src/styles/globals.css'
 import { Noto_Sans_JP, Roboto } from '@next/font/google'
 import 'material-icons/iconfont/material-icons.css';
 import { BaseTemplate } from '@/components/Templates/BaseTemplate'
-import { Providers } from "./providers";
 import { Metadata } from 'next'
 
 const roboto = Roboto({
@@ -79,11 +78,9 @@ export default function RootLayout({
         ${roboto.variable}
         ${notojp.variable}
       `}>
-        <Providers>
-          <BaseTemplate>
-            {children}
-          </BaseTemplate>
-        </Providers>
+        <BaseTemplate>
+          {children}
+        </BaseTemplate>
       </body>
     </html>
   )
